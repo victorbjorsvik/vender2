@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Kontakt
+{% endblock %}
+
+{% block main %}
+<main class="container-fluid py-5 text-center">
+    <h2>Ta gjerne kontakt dersom du lurer på noe</h2>
+    <p></p>
+        <table class="table">
+            <thead>
+                <th></th>
+                <th>Navn</th>
+                <th>Telefon</th>
+                <th>Epost</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Daglig leder</td>
+                    <td>Tore Bjørsvik</td>
+                    <td>+47 91767002</td>
+                    <td>tore.bjorsvik@vender.no</td>
+                </tr>
+                <tr>
+                    <td>Teknisk Sjef</td>
+                    <td>Inge Oftebro</td>
+                    <td>+47 41751261</td>
+                    <td>inge.oftebro@hydro.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 style="padding: 20px">Besøksadresse:</h3>
+        <hr>
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.0109389818767!2d10.6544692!3d59.915365800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416c5437e8fbcb%3A0x2f2cd04bec7161cc!2sDrammensveien%20256%2C%200277%20Oslo%2C%20Norway!5e0!3m2!1sen!2sus!4v1684527499466!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+</main>
+{% endblock %}

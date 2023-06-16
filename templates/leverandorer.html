@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Leverandorer
+{% endblock %}
+
+{% block main %}
+    <h2>Våre leverandører:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Org.nummer</th>
+                <th>Telefon</th>
+                <th>E-post</th>
+                <th>Adresse</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table-->
+
+            {% for levs in levs %}
+            <tr>
+                <td>{{ levs.navn }}</td>
+                <td>{{ levs.orgnummer }}</td>
+                <td>{{ levs.telefon }}, {{ levs.mobil }}</td>
+                <td>{{ levs.epost }}</td>
+                <td>{{ levs.adresse }}, {{ levs.postnummer }}, {{ levs.poststed }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

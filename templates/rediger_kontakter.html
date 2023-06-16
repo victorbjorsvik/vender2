@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rediger kontakter
+{% endblock %}
+
+{% block main %}
+    <h5>Legg til ny kontakt</h5>
+    <hr>
+    <form action="{{ url_for('leggtil_kontakt') }}" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="stilling" name="stilling" placeholder="Stilling" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="navn" name="navn" placeholder="Navn" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="telefon" name="telefon" placeholder="Telefon" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="epost" name="epost" placeholder="E-post" type="text" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Lagre</button>
+    </form>
+    <h5 style="padding: 20px;">Kontakter:</h5>
+    <hr>
+    <table class="table">
+        <thead>
+            <th></th>
+            <th>Navn</th>
+            <th>Telefon</th>
+            <th>Epost</th>
+            <th></th>
+        </thead>
+        <tbody>
+
+            {% for contacts in contacts %}
+            <tr>
+                <td>{{ contacts.stilling }}</td>
+                <td>{{ contacts.navn }}</td>
+                <td>{{ contacts.telefon }}</td>
+                <td>{{ contacts.epost }}</td>
+                <td>
+                    <form action="{{ url_for('slett_kontakt') }}" method="post">
+                        <input id="navn2" name="navn2" type="hidden" value="{{ contacts.navn }}">
+                        <button class="btn btn-primary" type="submit" style="background-color:red ">Slett</button></td>
+                    </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </form>
+
+{% endblock %}

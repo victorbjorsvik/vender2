@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rapporter
+{% endblock %}
+
+{% block main %}
+<h3>Vårt arbeid med åpenhetsloven</h3>
+<div class="text-success">
+  <hr>
+</div>
+<div class="offices">
+  <img src="{{url_for('static', filename='FN.png')}}"
+      width="70%"
+  />
+</div>
+<p align="left">I forbindelse med åpenhetsloven av 2022 har vi i Vender AS gjennomført en rekke aktsomhetsvurderinger i et forsøk på å
+    synliggjøre brudd på menneskerettigheter i leverandørkjeden samt å rette drift i en mer bærekraftig retning. I det følgende presenteres vår rapport for arbeidet som gjøres i forbindelse med åpenhetsloven.
+</p>
+<a href="/static/Vender.pdf">Last ned rapporten her</a>
+{% endblock %}

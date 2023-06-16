@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rediger leverandører
+{% endblock %}
+
+{% block main %}
+    <h5>Legg til ny leverandør:</h5>
+    <hr>
+    <form action="{{ url_for('leggtil_leverandor') }}" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="navn" name="navn" placeholder="Navn" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="orgnummer" name="orgnummer" placeholder="Org.nummer" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="telefon" name="telefon" placeholder="Telefon" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="epost" name="epost" placeholder="E-post" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="adresse" name="adresse" placeholder="Adresse" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="postnummer" name="postnummer" placeholder="Postummer" type="text" required>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="poststed" name="poststed" placeholder="Poststed" type="text" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Lagre</button>
+    </form>
+    <h5 style="padding: 20px;">Leverandører:</h5>
+    <hr>
+    <table class="table">
+        <thead>
+            <th>Navn</th>
+            <th>Org.Nummer</th>
+            <th>Telefon</th>
+            <th>Epost</th>
+            <th>Adresse</th>
+        </thead>
+        <tbody>
+
+            {% for levs in levs %}
+            <tr>
+                <td>{{ levs.navn }}</td>
+                <td>{{ levs.orgnummer }}</td>
+                <td>{{ levs.telefon }}, {{ levs.mobil }}</td>
+                <td>{{ levs.epost }}</td>
+                <td>{{ levs.adresse }}, {{ levs.postnummer }}, {{ levs.poststed }}</td>
+                <td>
+                <form action="{{ url_for('slett_leverandor') }}" method="post">
+                    <input id="navn2" name="navn2" type="hidden" value="{{ levs.navn }}">
+                    <button class="btn btn-primary" type="submit" style="background-color:red ">Slett</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </form>
+{% endblock %}
