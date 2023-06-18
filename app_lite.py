@@ -10,8 +10,6 @@ from helpers import apology, login_required
 
 # Configure application
 app = Flask(__name__)
-app.run(debug=True)
-
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
