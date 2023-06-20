@@ -62,13 +62,13 @@
                 <li>
                     <a style="color:white;" href="/">Home</a>
                 </li>
-                <li>
+                <li class="{% if active=='redegjorelse' %}active{%endif %}">
                     <a style="color:white;" href="/redegjorelse">Rapporter</a>
                 </li>
                 <li>
                     <a style="color:white;" href="#">Om oss</a>
                 </li>
-                <li>
+                <li class="{% if active=='kontakt' %}active{%endif %}">
                     <a style="color:white;" href="/kontakt">Kontakt</a>
                 </li>
             </ul>

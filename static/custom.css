@@ -202,7 +202,9 @@ header .header-content .header-content-inner p {
 }
 
 .navbar-default .navbar-header .navbar-brand {
-    color: black;
+    color: rgba(255,255,255,.7);
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,

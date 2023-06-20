@@ -28,8 +28,7 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    """Show portfolio of stocks"""
-
+    """Hjemmeside"""
 
     return render_template("index.html")
 
@@ -37,14 +36,16 @@ def index():
 
 @app.route("/kontakt")
 def kontakt():
+    """OVersikt over kontaktinformasjon"""
 
-
-    return render_template("kontakt.html")
+    return render_template("kontakt.html", active='kontakt')
 
 
 @app.route("/redegjorelse")
 def redegjorelse():
-    return render_template("redegjorelse.html")
+    """Publisering av rapport iht. åpenhetsloven"""
+
+    return render_template("redegjorelse.html", active='redegjorelse')
 
 
 
